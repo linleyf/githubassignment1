@@ -7,18 +7,18 @@ function readHTML (url, callback) {
   path: "/"
 	};
 
-	var url = "";
+	var text = "";
 
 	http.get(requestOptions, function(response) {
 
 		response.setEncoding("utf8");
 
 		response.on("data", function(data) {  
-	  url += data;
+	  text += data;  // text = text + data;
 
 		console.log("Read Email.");
 
-		console.log(url)
+		console.log(text)
 		});
 
 
@@ -27,7 +27,7 @@ function readHTML (url, callback) {
  		});
 
 
-		callback(url);
+		callback(text);
 
 	})
 
